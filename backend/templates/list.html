@@ -1,0 +1,12 @@
+<ul class="list">
+    {% for record in data %}
+        <li id="list__data_{{ record.id }}">
+            {{ record.last_name }} {{ record.first_name }}
+            {% if cur_page == "admin" %}
+                <button class="list__delete" onclick="deletePerson('{{ record.id }}')">Удалить</button>
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>

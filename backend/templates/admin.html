@@ -6,4 +6,12 @@
 
 {% block main %}
     <h1>Страница администратора!</h1>
+    <br>
+    <form action="{{ url_for('person_info') }}" class="form" method="POST">
+        <input type="text" class="form__input" name="first_name" placeholder="Имя" required>
+        <input type="text" class="form__input" name="last_name" placeholder="Фамилия" required>
+        <button class="form__button">Отправить</button>
+    </form>
+    
+    {% include "list.html" %}
 {% endblock %}

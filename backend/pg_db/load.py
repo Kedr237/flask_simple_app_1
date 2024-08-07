@@ -1,10 +1,10 @@
-from typing import Dict
+from typing import Dict, List
 
 from .logger import logger
 from .pg_conn import open_pg
 
 
-def load_person_data(data: Dict[str, str]):
+def load_person_data(data: List[Dict[str, str]]):
     with open_pg() as cur:
         query = '''
         INSERT INTO person (id, first_name, last_name)
