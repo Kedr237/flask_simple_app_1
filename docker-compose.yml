@@ -1,0 +1,8 @@
+services:
+  pg_db:
+    image: postgres:16
+    env_file:
+      - ./pg_db/.env
+    volumes:
+      - ./pg_db/pg_data:/var/lib/postgresql/data
+      - ./pg_db/db_dump.sql:/docker-entrypoint-initdb.d/db_dump.sql
