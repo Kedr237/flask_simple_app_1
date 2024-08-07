@@ -6,11 +6,5 @@
 
 {% block main %}
     <h1>Главная страница!</h1>
-    <ul class="list">
-        {% for record in data %}
-            <li id="list__data_{{ record.id }}">
-                {{ record.last_name }} {{ record.first_name }}
-            </li>
-        {% endfor %}
-    </ul>
+    {% include "list.html" %}
 {% endblock%}
